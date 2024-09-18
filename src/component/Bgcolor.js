@@ -12,10 +12,10 @@ const Bgcolor = () => {
 
 
   return (
-    <div className='max-w-fullw-full flex justify-center items-center h-screen ' style={{ background: data }} >
+    <div className='max-w-full flex justify-center items-center h-screen duration-300' style={{ background: data }} >
       <div className='max-w-md p-12 bg-white rounded-lg text-center'>
         <h1 className='text-current text-3xl text-center'>Bg color changer</h1>
-        <button className='border border-blue-950 rounded-xl bg-lime-900 text-white mt-10 text-center w-24 p-1' onClick={handlerColorbg}>Click me</button>
+        <button className='border border-blue-950 rounded-md bg-pink-600 text-white mt-10 text-center w-24 p-1' onClick={handlerColorbg}>Click me</button>
       </div>
     </div>
   )
