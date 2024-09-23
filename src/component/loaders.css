@@ -1,0 +1,46 @@
+.loader_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  color: black;
+  border-radius: 8px;
+}
+
+.loader_message {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #000000 !important;
+  color: #fff !important;
+  margin-bottom: 16px;
+}
+
+.dots_container {
+  display: flex !important;
+  gap: 8px;
+  color: #ffffff !important;
+}
+
+.dot {
+  width: 15px;
+  height: 15px;
+  background-color: #4299e1;
+  background-color: skyblue;
+  border-radius: 50%;
+  animation: bounce 0.6s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.loader_demo {
+  width: 100%;
+}

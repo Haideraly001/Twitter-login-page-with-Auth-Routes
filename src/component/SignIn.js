@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faGoogle, faApple } from '@fortawesome/free-brands-svg-icons';
 import { useNavigate } from 'react-router-dom';
+import Loader from './loader';
 
 const SignIn = () => {
 
@@ -17,6 +18,7 @@ const SignIn = () => {
     password: '',
   });
   const [update, setUpdate] = useState(false)
+  const [loader, setLoader] = useState(false)
 
   const handleEmailStatus = (e) => {
     setValue({ ...value, email: e.target.value })
@@ -29,8 +31,10 @@ const SignIn = () => {
 
   const userUpdate = () => {
     setUpdate(true)
+    setLoader(true);
     console.log(value);
     setTimeout(() => {
+      setLoader(false)
       navigation("/")
     }, 3000)
 
@@ -78,12 +82,16 @@ const SignIn = () => {
             className="border rounded-md w-full p-2 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-200"
           />
 
-          <button
-            onClick={userUpdate}
-            className="w-full bg-black text-white rounded-full p-2 mb-4 hover:bg-gray-800">
-
-            Next
-          </button>
+          {loader ? (
+            <Loader />
+          ) : (
+            <button
+              onClick={userUpdate}
+              className="w-full bg-black text-white rounded-full p-2 mb-4 hover:bg-gray-800"
+            >
+              Next
+            </button>
+          )}
 
           <button className="w-full text-blue-500 mb-4 hover:underline">
             Forgot Password?
